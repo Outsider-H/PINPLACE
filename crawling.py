@@ -1,3 +1,4 @@
+#selenium을 이용하여 구글에서 이미지를 크롤링하는 코드
 from selenium import webdriver 
 from selenium.webdriver.common.keys import Keys
 import time
@@ -10,7 +11,8 @@ def createFolder(directory):
             os.makedirs(directory)
     except OSError:
         print ('Error: Creating directory. ' +  directory)
-keyword='연트럴 파크' #검색할 키워드
+keyword='연트럴 파크' 
+#검색할 키워드
 createFolder('C:/Users/user/Desktop/images/'+keyword+'_img_download') 
 chromedriver = 'C:/Users/user/Downloads/chromedriver.exe' 
 driver = webdriver.Chrome(chromedriver) 
