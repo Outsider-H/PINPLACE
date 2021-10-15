@@ -121,6 +121,9 @@ with tf.device('/device:GPU:0'):
     checkpoint = ModelCheckpoint(filepath=model_path , monitor='val_loss', verbose=1, save_best_only=True)
     early_stopping = EarlyStopping(monitor='val_loss', patience=6)
 
+#모델 형태를 표로 요약
+model.summary()
+
 #모델 학습하기
 
 history = model.fit(X_train, y_train, batch_size=32, epochs=50, validation_split=0.1, callbacks=[checkpoint, early_stopping])
