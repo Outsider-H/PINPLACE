@@ -1,0 +1,213 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.vert-middle {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.horiz-centred {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.tot-centred {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    background: #cce0ff;
+    width: 100%;
+    height: 51px;
+}
+
+#header > #logo {
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    padding: 6px;
+    font-size: 16px;
+    width: fit-content;
+    color: #2055bc;
+}
+
+#header > #navbar {
+    position: absolute;
+    right: 0;
+    width: fit-content;
+    padding: 6px;
+}
+
+#navbar > ul.navbar-entry {
+    font-size: 10px;
+    color: #232323;
+    list-style: none none;
+    padding: 0;
+    margin: 0;
+}
+
+ul.navbar-entry > li.button {
+    display: inline;
+    font-family: sans-serif;
+    font-weight: normal;
+    margin: 0 3px 0 3px;
+}
+
+ul.navbar-entry > li.button.active {
+    font-weight: bold;
+}
+
+#content {
+    position: relative;
+    width: 100%;
+}
+
+#title {
+    position: sticky;
+    top: 51px;
+    height: 32px;
+    z-index: 3;
+    width: 100%;
+    border-radius: 3px;
+    background: #ddddee;
+}
+
+p#title-text {
+    margin: 10px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#subtitle {
+    position: sticky;
+    top: 83px;
+    height: 32px;
+    z-index: 3;
+    width: 100%;
+    border-radius: 3px;
+    background: #ccddff;
+}
+
+p#subtitle-text {
+    margin: 10px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+#list-button-sort-by {
+    position: absolute;
+    right: 2px;
+    margin: 2px;
+    height: 28px;
+    width: 28px;
+    background: #ddddee;
+    border-radius: 4px;
+}
+
+.list-entry {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 60px;
+    margin: 0;
+    padding: 0;
+}
+
+.list-entry.odd-line {
+    border-radius: 4px;
+    background: #ddf4ff;
+}
+
+.list-entry.even-line {
+    border-radius: 4px;
+    background: #eef8ff;
+}
+
+.list-entry.odd-line.first {
+    height: 100px;
+}
+
+.list-entry.even-line.second, .list-entry.odd-line.third {
+    height: 85px;
+}
+
+.rank {
+    position: relative;
+    left: 2px;
+    top: 2px;
+    margin: 2px;
+    margin-right: 6px;
+    height: 28px;
+    width: 28px;
+    background: #ccddee;
+    border-radius: 4px;
+}
+
+.first > .rank {
+    background: #ffec80;
+    border: 1px solid #cce4ee;
+    margin: 1px;
+    margin-right: 6px;
+}
+
+.second > .rank {
+    background: #e6e6e6;
+    border: 1px solid #dde8ee;
+    margin: 1px;
+    margin-right: 6px;
+}
+
+.third > .rank {
+    top: 4px;
+    background: #d9bf8c;
+    border: 1px solid #cce4ee;
+    margin: 1px;
+    margin-right: 6px;
+}
+
+.list-name {
+    flex: 5;
+    margin: 2px;
+    margin-right: 6px;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+p.list-text {
+    display: block;
+    position: relative;
+    top: 8px;
+    margin: 0;
+}
+
+.list-image {
+    flex: 2;
+}
+
+.first > .list-image > img {
+    margin: 5px;
+    max-height: 90px;
+}
+
+.second > .list-image > img, .third > .list-image > img {
+    margin: 5px;
+    max-height: 75px;
+}
+
+.list-image > img {
+    float: right;
+    margin: 5px;
+    max-height: 50px;
+}
