@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<head>
+<link href="style.css" rel="stylesheet" type="text/css" title="Style style">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width">
+<title>Test Page</title>
+</head>
+<body>
+<header>
+    <div id="header">
+        <div id="logo">PINPLACE</div>
+        <div id="navbar" class="vert-middle">
+            <ul class="navbar-entry">
+                <li class="button">Find Place</li>
+                <li class="button">Hotplace List</li>
+                <li class="button active">Upload</li>
+                <li class="button">SNS</li>
+                <li class="button">My Page</li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<div id="content">
+    <div id="title"><div class="vert-middle"><p id="title-text">기억해줘요</span></div></div>
+        <div class="section-title">
+            <div class="vert-middle"><p class="section-title-text">사진을 올려주세요</span></div>
+        </div>
+        <div class="upload-icon-place">
+            <label class="upload-button" for="upload-file-upload"><div class="tot-centred"><b class="fa fa-image"></b></div></label>
+            <input type="file" id="upload-file-upload" accept="image/*" />
+            <label class="upload-button" for="upload-take-photo"><div class="tot-centred"><b class="fa fa-camera"></b></div></label>
+            <input type="file" id="upload-take-photo" accept="image/*" capture="environment" />
+        </div>
+        <div class="section-title">
+            <div class="vert-middle"><p class="section-title-text">여기는 어디인가요?</span></div>
+        </div>
+        <div id="map-applet">
+            지도가 들어갈 공간입니다.
+        </div>
+        <div class="upload-icon-place">
+            <label class="upload-button upload" for="upload-submit"><div class="tot-centred">업로드</div></label>
+            <input type="submit" id="upload-submit"/>
+            <label class="upload-button cancel"><div class="tot-centred">취소</div></label>
+        </div>
+</div>
+</body>

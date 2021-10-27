@@ -129,12 +129,12 @@ p#subtitle-text {
 
 .list-entry.odd-line {
     border-radius: 4px;
-    background: #ddf4ff;
+    background: #ddf0f8;
 }
 
 .list-entry.even-line {
     border-radius: 4px;
-    background: #eef8ff;
+    background: #eef4f8;
 }
 
 .list-entry.odd-line.first {
@@ -181,8 +181,7 @@ p#subtitle-text {
 
 .list-name {
     flex: 5;
-    margin: 2px;
-    margin-right: 6px;
+    margin: 2px 6px;
     font-family: sans-serif;
     font-size: 16px;
 }
@@ -254,7 +253,7 @@ p.list-text {
     margin: 2px;
     height: 28px;
     width: 28px;
-    background: #ececec;
+    background: #ececfd;
     border-radius: 4px;
 }
 
@@ -270,4 +269,139 @@ p.list-text {
     max-width: 160px;
     border: 1px solid gray;
     border-radius: 5px;
+}
+
+/* Upload Search page */
+/* Sharing some classes with place list page because of listings */
+
+#search-bar {
+    position: sticky;
+    top: 83px;
+    height: 60px;
+    z-index: 3;
+    width: 100%;
+    border-radius: 3px;
+    background: #ccddff;
+}
+
+#search-box {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    height: 40px;
+    width: calc(100% - 32px);
+    margin: 10px 16px;
+    background: #e0e0e8;
+    border-radius: 16px;
+    padding: 0;
+}
+
+#upload-icon-search {
+    position: relative;
+    margin: 6px;
+    height: 28px;
+    width: 28px;
+    background: #f0f0f8;
+    border-radius: 8px;
+    padding: 0;
+}
+
+#search-input {
+    position: relative;
+    flex: 1;
+    background: #e0e0e8;
+    border: 0;
+    margin: 8px 4px;
+
+}
+
+.list-found {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+}
+
+.list-found.odd-line {
+    border-radius: 4px;
+    background: #ddf0f8;
+}
+
+.list-found.even-line {
+    border-radius: 4px;
+    background: #eef4f8;
+}
+
+.list-found.upload-photo {
+    border-radius: 4px;
+    background: #e0e4ff;
+}
+
+.list-placeholder {
+    margin: 6px;
+    margin-left: 22px;
+    height: 28px;
+    width: 28px;
+    padding: 0;
+}
+#upload-icon-photo {
+    position: relative;
+    margin: 11px 6px 11px 22px;
+    height: 28px;
+    width: 28px;
+    background: #f0f0f8;
+    border-radius: 8px;
+    padding: 0;
+}
+
+/* Upload page */
+.section-title {
+    position: relative;
+    height: 32px;
+    z-index: 3;
+    width: 100%;
+    border-radius: 3px;
+    background: #ccddff;
+}
+
+p.section-title-text {
+    margin: 10px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.upload-icon-place {
+    display: flex;
+    flex-direction: row;
+    background: #ddeeff;
+}
+
+.upload-button {
+    position: relative;
+    flex: 1;
+    border-radius: 16px;
+    height: 72px;
+    margin: 20px;
+    background: #337ab7;
+    color: white;
+}
+
+.upload-button.upload {
+    background: #5cb85c;
+}
+
+.upload-button.cancel {
+    background: #d9534f;
+}
+
+#map-applet {
+    height: 200px;
+    width: 100%;
+    background: #ececec;
+}
+
+#upload-file-upload, #upload-take-photo, #upload-submit {
+    display: none;
 }
