@@ -6,8 +6,10 @@ loadModel();
 
 const imgSelector = document.querySelector("#img");
 const predictBtn = document.querySelector(".predict");
+const pred = document.querySelector(".result");
 
 imgSelector.addEventListener("change", () => {
+  pred.innerHTML = "";
   document.querySelector(".imageBox").innerHTML = "";
   let reader = new FileReader();
   reader.addEventListener("load", () => {
@@ -45,6 +47,6 @@ predictBtn.addEventListener("click", async () => {
     })
     .slice(0, 1);
   console.log(top);
-  const pred = document.querySelector(".result");
+
   pred.innerHTML = `${top[0].className}`;
 });
