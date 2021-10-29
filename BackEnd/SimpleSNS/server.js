@@ -1,6 +1,16 @@
 const express = require("express");
 const mysql = require("mysql");
 const fs = require("fs");
+const multer = require("multer");
+let storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "./page/resources");
+  },
+  filename: (req, file, cb) => {
+    cb(null, `${Date.now()}-${file.originalname}`);
+  },
+});
+let upload = multer({ storage: storage });
 const PORT = 8899;
 
 const con = mysql.createConnection({
@@ -74,27 +84,6 @@ LEFT JOIN cn_userdatabase.user ON cn_userdatabase.user.iduser = cn_userdatabase.
   console.log("There");
 });
 
-app.post("/imgupload", (req, res) => {
-  // console.log("img input");
-  // console.log(req.body.id);
-  console.log(req.body.img[0].size);
-
-  const uploadImg = (id, img) => {
-    let name = `${Date.now()}_${id}`;
-    let path = `./resources/${name}`;
-    fs.writeFileSync(path, img);
-    con.query(
-      `INSERT INTO cn_userdatabase.image (iduser, image) VALUES (${id}, "${path}")`,
-      (serr, sres, sfield) => {
-        if (serr) throw serr;
-      }
-    );
-  };
-
-  uploadImg(req.body.id, req.body.img);
-  res.end("success");
-});
-
 app.get("/imageload", (req, res) => {
   const loadImage = () => {
     con.query(
@@ -103,13 +92,20 @@ app.get("/imageload", (req, res) => {
         console.log(sres);
         // console.log(sres[0].image);
         // let temp = fs.readFileSync(sres[0].image, { encoding: "utf-8" });
+        let classlist = [];
+        sres.forEach((elem) => classlist.push(`img${elem.idimage}`));
+        console.log(classlist);
         res.end(
-          sres
-            .map(
-              (elem) =>
-                `<li class="img${elem.idimage}">${elem.idimage}: ${elem.username}`
-            )
-            .join(" ")
+          JSON.stringify({
+            html: sres
+              .map(
+                (elem) =>
+                  `<li class="img${elem.idimage}">${elem.idimage}: ${elem.username}`
+              )
+              .join(" "),
+            image: sres.map((elem) => `${elem.image}`).join(","),
+            class: classlist,
+          })
         );
       }
     );
@@ -130,4 +126,26 @@ app.post("/getimage", (req, res) => {
     );
   };
   loadImage(req.body.id);
+});
+
+app.post("/imguploadform", upload.single("img-file"), (req, res) => {
+  let filename = req.file.filename;
+  let userId = req.file.filename.split("-")[1];
+  let path = `./resources/${filename}`;
+
+  console.log(path);
+  console.log(userId);
+  console.log(filename);
+
+  const uploadImg = (id, img) => {
+    console.log(id, img);
+    con.query(
+      `INSERT INTO cn_userdatabase.image (iduser, image) VALUES (${id}, "${img}")`,
+      (serr, sres, sfield) => {
+        if (serr) throw serr;
+      }
+    );
+  };
+  uploadImg(userId, path);
+  res.end("success");
 });

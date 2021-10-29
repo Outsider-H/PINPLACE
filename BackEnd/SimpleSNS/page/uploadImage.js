@@ -1,43 +1,28 @@
 const imgSelector = document.querySelector(".img");
 const btn = document.querySelector(".post");
+const form = document.querySelector(".sendform");
 const PORT = 8899;
 const userId = 1;
 let url;
 let blob;
-imgSelector.addEventListener("change", () => {
-  document.querySelector(".imgbox").innerHTML = "";
-  let reader = new FileReader();
-  reader.addEventListener("load", () => {
-    let dataURL = reader.result;
-    let img = document.createElement("img");
-    img.style.height = "200px";
-    img.src = dataURL;
-    document.querySelector(".imgbox").appendChild(img);
-    url = dataURL;
 
-    req.open("GET", url);
-    req.responseType = "blob";
-    req.onload = (e) => {
-      let temp = req.response;
-      console.log(temp);
-      blob = temp;
-    };
-    req.send();
-  });
-  let file = imgSelector.files[0];
-  reader.readAsDataURL(file);
-  //   blob = file;
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  let data = new FormData(event.target);
+  console.log(data);
+  console.log(data.get("img-file"));
+  console.log(data.get("img-file").name);
+  console.log(data.get("img-file").stream());
+  data.set(
+    "img-file",
+    data.get("img-file"),
+    `${userId}-${data.get("img-file").name}`
+  );
 
-  let req = new XMLHttpRequest();
-});
-
-btn.addEventListener("click", () => {
-  console.log(blob);
-  console.log(blob.stream());
-
-  //   console.log(url);
   const xhr = new XMLHttpRequest();
-  xhr.open("POST", `http://localhost:${PORT}/imgupload`);
-  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-  xhr.send(`id=${userId}&img=${url}`);
+  xhr.open("POST", "/imguploadform");
+  xhr.onload = () => {
+    console.log(xhr.responseText);
+  };
+  xhr.send(data);
 });

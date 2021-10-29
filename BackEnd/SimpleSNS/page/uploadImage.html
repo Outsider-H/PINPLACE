@@ -11,10 +11,16 @@
       <a href="./index.html">home</a>
     </div>
     <div class="body">
-      <div class="imgbox"></div>
-      <input type="file" name="" class="img" id="" />
-      <button class="post">post</button>
-      <script src="./uploadImage.js"></script>
+      <form
+        method="POST"
+        action="/imguploadform"
+        enctype="multipart/form-data"
+        class="sendform"
+      >
+        <input type="file" name="img-file" />
+        <input type="submit" value="Upload" />
+      </form>
     </div>
+    <script src="./uploadImage.js"></script>
   </body>
 </html>

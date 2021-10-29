@@ -6,29 +6,27 @@ xhr.send();
 
 xhr.onreadystatechange = () => {
   console.log(xhr.response);
-  document.querySelector(".body").innerHTML = xhr.response;
-};
-
-let body = document.querySelector(".body");
-body.addEventListener("click", (event) => {
-  console.log(event.target);
-  console.log(event.target.innerHTML);
-  let temp = event.target.innerHTML;
-  let processed = temp.split(":");
-  console.log(processed);
-  let imageId = processed[0] - 0;
-  console.log(imageId);
-  console.log(typeof imageId);
-
-  const xhr = new XMLHttpRequest();
-  xhr.open("POST", `http://localhost:${PORT}/getimage`);
-  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-  xhr.send(`id=${imageId}`);
-  xhr.onreadystatechange = () => {
-    console.log(xhr.response);
+  console.log(JSON.parse(xhr.response).html);
+  document.querySelector(".body").innerHTML = JSON.parse(xhr.response).html;
+  console.log(JSON.parse(xhr.response).image.split(","));
+  let pathlist = [];
+  JSON.parse(xhr.response)
+    .image.split(",")
+    .forEach((elem) => {
+      pathlist.push(elem);
+    });
+  console.log(pathlist);
+  console.log(JSON.parse(xhr.response).class);
+  JSON.parse(xhr.response).class.forEach((elem, idx) => {
+    console.log(idx);
+    console.log(`.${elem}`);
+    console.log(`.${pathlist[idx]}`);
+    let div = document.createElement("div");
     let img = document.createElement("img");
     img.style.height = "200px";
-    img.src = xhr.response;
-    event.target.appendChild(img);
-  };
-});
+
+    img.src = `${pathlist[idx]}`;
+    div.appendChild(img);
+    document.querySelector(`.${elem}`).appendChild(div);
+  });
+};
