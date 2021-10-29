@@ -19,6 +19,11 @@ form.addEventListener("submit", (event) => {
     `${userId}-${data.get("img-file").name}`
   );
 
+  //add additional content here
+  data.append("test", "test");
+  data.append("test2", "test2");
+
+  console.log(data.get("test"));
   const xhr = new XMLHttpRequest();
   xhr.open("POST", "/imguploadform");
   xhr.onload = () => {

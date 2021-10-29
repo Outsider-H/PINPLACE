@@ -137,6 +137,9 @@ app.post("/imguploadform", upload.single("img-file"), (req, res) => {
   console.log(userId);
   console.log(filename);
 
+  //get additional content here
+  console.log(req.body);
+
   const uploadImg = (id, img) => {
     console.log(id, img);
     con.query(
