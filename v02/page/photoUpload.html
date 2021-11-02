@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <link href="style.css" rel="stylesheet" type="text/css" title="Style style">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Upload - PINPLACE</title>
+</head>
+<body>
+<header>
+    <div id="header">
+        <div id="logo"><a href="./start.html">PINPLACE</div>
+            <div id="navbar" class="vert-middle">
+            <ul class="navbar-entry">
+                <li class="button"><a href="./index.html">Find Place</a></li>
+                <li class="button"><a href="./placeRank.html">Hotplace List</a></li>
+                <li class="button active"><a href="./photoUpload.html">Upload</a></li>
+                <li class="button"><a href="./sns.html">SNS</a></li>
+                <li class="button"><a href="./.html">My Page</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<div id="content">
+    <div id="title"><div class="vert-middle"><p id="title-text">Upload</span></div></div>
+        <div class="section-title">
+            <div class="vert-middle"><p class="section-title-text">Upload your photo!</span></div>
+        </div>
+        <div id="preview">
+        </div>
+        <form method="POST" action="/imguploadform" enctype="multipart/form-data" id="sendform">
+            <div class="upload-icon-place">
+                <label class="upload-button" for="upload-file-upload"><div class="tot-centred"><b class="fa fa-image"></b></div></label>
+                <input type="file" id="upload-file-upload" name="image" accept="image/*" />
+            </div>
+            <div class="upload-place-dropdown">
+                <label class="upload-place-label" for="upload-place-dropdown">Where is it?&nbsp;</label>
+                <select id="upload-place-dropdown" name="place">
+                </select>
+            </div>
+            <div class="upload-icon-place">
+                <label class="upload-button upload" for="upload-submit"><div class="tot-centred">Upload</div></label>
+                <input type="submit" id="upload-submit"/>
+                <label class="upload-button cancel" for="upload-cancel"><div class="tot-centred">Cancel</div></label>
+                <input type="button" id="upload-cancel" />
+            </div>
+        </form>
+        <script src="./photoUpload.js"></script>
+</div>
+</body>
+</html>

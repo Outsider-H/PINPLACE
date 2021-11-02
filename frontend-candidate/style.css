@@ -360,7 +360,6 @@ p.list-text {
 .section-title {
     position: relative;
     height: 32px;
-    z-index: 3;
     width: 100%;
     border-radius: 3px;
     background: #ccddff;
