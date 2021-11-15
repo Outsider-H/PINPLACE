@@ -1,0 +1,22 @@
+
+html
+{
+  position: relative;
+
+  background: #68BCFF;
+  box-shadow: 40px 40px 100px rgba(24, 48, 63, 0.5);
+}
+
+
+h1
+{
+font-family : nanumsquare;
+font-size: 57px;
+color: #D83333;
+margin-top : 0px;
+
+}
+
+.blank {
+  height: 4rem;
+}

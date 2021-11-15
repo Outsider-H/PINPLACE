@@ -1,0 +1,483 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: sans-serif;
+}
+
+
+.vert-middle {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.horiz-centred {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.tot-centred {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    background: #cce0ff;
+    width: 100%;
+    height: 51px;
+}
+
+#header > #logo {
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    padding: 6px;
+    font-size: 16px;
+    width: fit-content;
+    font-weight: 600;
+    color: #2055bc;
+}
+
+#header > #navbar {
+    position: absolute;
+    right: 0;
+    width: fit-content;
+    padding: 6px;
+}
+
+#navbar > ul.navbar-entry {
+    font-size: 10px;
+    color: #232323;
+    list-style: none none;
+    padding: 0;
+    margin: 0;
+}
+
+ul.navbar-entry > li.button {
+    display: inline;
+    font-family: sans-serif;
+    font-weight: normal;
+    margin: 0 3px 0 3px;
+}
+
+ul.navbar-entry > li.button.active {
+    font-weight: bold;
+}
+
+#content {
+    position: relative;
+    width: 100%;
+}
+
+#title {
+    position: sticky;
+    top: 51px;
+    height: 32px;
+    z-index: 3;
+    width: 100%;
+    border-radius: 3px;
+    background: #ddddee;
+}
+
+p#title-text {
+    margin: 10px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+p#find {
+  font-size:30px;
+  text-align : center;
+}
+
+#subtitle {
+    position: sticky;
+    top: 83px;
+    height: 32px;
+    z-index: 3;
+    width: 100%;
+    border-radius: 3px;
+    background: #ccddff;
+}
+
+p#subtitle-text {
+    margin: 10px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* Place List */
+
+#list-button-sort-by {
+    position: absolute;
+    right: 2px;
+    margin: 2px;
+    height: 28px;
+    width: 28px;
+    background: #ddddee;
+    border-radius: 4px;
+}
+
+.list-entry {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 60px;
+    margin: 0;
+    padding: 0;
+}
+
+.list-entry.odd-line {
+    border-radius: 4px;
+    background: #ddf0f8;
+}
+
+.list-entry.even-line {
+    border-radius: 4px;
+    background: #eef4f8;
+}
+
+.list-entry.odd-line.first {
+    height: 100px;
+}
+
+.list-entry.even-line.second, .list-entry.odd-line.third {
+    height: 85px;
+}
+
+.rank {
+    position: relative;
+    left: 2px;
+    top: 2px;
+    margin: 2px;
+    margin-right: 6px;
+    height: 28px;
+    width: 28px;
+    background: #ccddee;
+    border-radius: 4px;
+}
+
+.first > .rank {
+    background: #ffec80;
+    border: 1px solid #cce4ee;
+    margin: 1px;
+    margin-right: 6px;
+}
+
+.second > .rank {
+    background: #e6e6e6;
+    border: 1px solid #dde8ee;
+    margin: 1px;
+    margin-right: 6px;
+}
+
+.third > .rank {
+    top: 4px;
+    background: #d9bf8c;
+    border: 1px solid #cce4ee;
+    margin: 1px;
+    margin-right: 6px;
+}
+
+.list-name {
+    flex: 5;
+    margin: 2px 6px;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+p.list-text {
+    display: block;
+    position: relative;
+    top: 8px;
+    margin: 0;
+}
+
+.list-image {
+    flex: 2;
+}
+
+.first > .list-image > img {
+    margin: 5px;
+    max-height: 90px;
+}
+
+.second > .list-image > img, .third > .list-image > img {
+    margin: 5px;
+    max-height: 75px;
+}
+
+.list-image > img {
+    float: right;
+    margin: 5px;
+    max-height: 50px;
+}
+
+/* Indiv. Place Page */
+
+#main-photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.main-photo-area {
+    margin: 5px;
+    padding: 0;
+    border: 1px solid gray;
+}
+
+.main-photo-area > img {
+    margin: 5px;
+    max-height: 150px;
+}
+
+#place-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: #ddddee;
+}
+
+#place-button-star, #place-button-upload {
+    position: relative;
+    margin: 2px;
+    height: 28px;
+    width: 28px;
+    background: #ececfd;
+    border-radius: 4px;
+}
+
+#other-photos {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+#other-photos > img {
+    margin: 5px;
+    max-width: 160px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+/* Upload Search page */
+/* Sharing some classes with place list page because of listings */
+
+#search-bar {
+    position: sticky;
+    top: 83px;
+    height: 60px;
+    z-index: 3;
+    width: 100%;
+    border-radius: 3px;
+    background: #ccddff;
+}
+
+#search-box {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    height: 40px;
+    width: calc(100% - 32px);
+    margin: 10px 16px;
+    background: #e0e0e8;
+    border-radius: 16px;
+    padding: 0;
+}
+
+#upload-icon-search {
+    position: relative;
+    margin: 6px;
+    height: 28px;
+    width: 28px;
+    background: #f0f0f8;
+    border-radius: 8px;
+    padding: 0;
+}
+
+#search-input {
+    position: relative;
+    flex: 1;
+    background: #e0e0e8;
+    border: 0;
+    margin: 8px 4px;
+
+}
+
+.list-found {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+}
+
+.list-found.odd-line {
+    border-radius: 4px;
+    background: #ddf0f8;
+}
+
+.list-found.even-line {
+    border-radius: 4px;
+    background: #eef4f8;
+}
+
+.list-found.upload-photo {
+    border-radius: 4px;
+    background: #e0e4ff;
+}
+
+.list-placeholder {
+    margin: 6px;
+    margin-left: 22px;
+    height: 28px;
+    width: 28px;
+    padding: 0;
+}
+#upload-icon-photo {
+    position: relative;
+    margin: 11px 6px 11px 22px;
+    height: 28px;
+    width: 28px;
+    background: #f0f0f8;
+    border-radius: 8px;
+    padding: 0;
+}
+
+/* Upload page */
+.section-title {
+    position: relative;
+    height: 32px;
+    z-index: 3;
+    width: 100%;
+    border-radius: 3px;
+    background: #ccddff;
+}
+
+p.section-title-text {
+    margin: 10px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.upload-icon-place {
+    display: flex;
+    flex-direction: row;
+    background: #ddeeff;
+}
+
+.upload-button {
+    position: relative;
+    flex: 1;
+    border-radius: 16px;
+    height: 72px;
+    margin: 20px;
+    background: #337ab7;
+    color: white;
+}
+
+.upload-button2 {
+    position: relative;
+    flex: 1;
+    border-radius: 16px;
+    height: 200px;
+    margin: 20px;
+    background: #337ab7;
+    color: white;
+}
+
+
+.upload-button.upload {
+    background: #5cb85c;
+}
+
+.upload-button.cancel {
+    background: #d9534f;
+}
+
+
+
+.upload-button2.upload {
+    background: #5cb85c;
+}
+
+.upload-button2.cancel {
+    background: #d9534f;
+}
+
+#map-applet {
+    height: 200px;
+    width: 100%;
+    background: #ececec;
+}
+
+#upload-file-upload, #upload-take-photo, #upload-submit {
+    display: none;
+}
+
+
+.btn1{
+  height : 40px;
+  background-color :#0385f494;
+  color : white;
+  font-size : 20px;
+  text-align : center;
+  position : absolute;
+  margin-top : 20px;
+  left : 48%;
+}
+
+
+img#pin {
+   position: relative;
+   left: -20%;
+   width : 140%;
+
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+  
+    z-index: 1;
+    color : #154481;
+    margin : 0px;
+    margin-left:40px;
+    font-size: 30px;
+}
+
+input#img{
+    color: red;
+    font-weight: 300;
+    margin-left:60px;
+    margin-top: -25px;
+
+}
+
+button.predict {
+    background-color: black;
+    border-radius: 10%;
+    color : white;
+    border-color: grey;
+    margin-bottom : 10px;
+}
+
