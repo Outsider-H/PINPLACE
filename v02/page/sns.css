@@ -25,7 +25,7 @@ h6 {
 
 #hero-slides {
   --page: 0;
-  height: 100vh;
+  height: 90vh;
   background: #25303c;
   background: linear-gradient(90deg, #99a3df 0%,#89b4df 100%);
 } 
