@@ -31,17 +31,18 @@
     <h1>Where is this Place?</h1>
   </div>
 
-  <div>
+  <div id="pin-pos">
     <img id=pin src="./assets/fl.gif">
   </div>
 
-  <div style="text-align:center;">
-    <input type="file" id="img" />
+  <form id="pred" method="POST" enctype="multipart/form-data" action="/imguploadform" style="text-align:center;">
+    <input type="file" id="img" name="image" accept="image/*" />
     <div class="imageBox"></div>
     <br>
-    <button class="predict">Predict</button>
+    <input type="button" class="predict" id="predict-predict" value="Predict" />
     <div class="result"></div>
-  </div>
+    <input type="submit" class="predict-upload" value="Upload" />
+  </form>
 
 
 

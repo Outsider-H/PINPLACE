@@ -36,6 +36,11 @@ form.addEventListener("submit", (event) => {
   };
 });
 
+window.addEventListener("load", (event) => {
+    form.reset();
+    const file = document.getElementById("upload-file-upload").value = '';
+});
+
 form.addEventListener("change", (event) => {
     event.preventDefault();
     const file = document.getElementById("upload-file-upload").files[0];
