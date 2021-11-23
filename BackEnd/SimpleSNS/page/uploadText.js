@@ -8,7 +8,7 @@ btn.addEventListener("click", () => {
   const xhr = new XMLHttpRequest();
   xhr.open("POST", `http://localhost:${PORT}/textupload`);
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-  xhr.send(`id=${userID}&content=${content.value}`);
+  xhr.send(`id=${userID}&content=${content.value}&test=abc`);
   content.value = "";
   console.log("success");
 });

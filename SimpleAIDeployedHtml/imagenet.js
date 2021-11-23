@@ -1,5 +1,5 @@
 const IMAGENET_CLASSES2 = {
-  0: "Dongdaemun Design Plaza",
+  0: "ddddDongdaemun Design Plaza",
   1: "Gyeongui Line Forest Park",
   2: "Naksan Park",
   3: "Namsan Seoul Tower",

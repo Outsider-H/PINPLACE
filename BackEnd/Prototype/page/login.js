@@ -8,12 +8,12 @@ test.addEventListener("click", () => {
   console.log(pw.value);
   console.log("click"); */
   const xhr = new XMLHttpRequest();
-  xhr.open("POST", "http://localhost:3000/loginquery");
+  xhr.open("POST", "/loginquery");
 
   xhr.onreadystatechange = () => {
-    // console.log(xhr.response);
+    console.log(xhr.response);
     //Redirect
-    location.href = `http://localhost:3000/main?auth=${xhr.response}&id=${id.value}`;
+    location.href = `/main?auth=${xhr.response}&id=${id.value}`;
   };
 
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");

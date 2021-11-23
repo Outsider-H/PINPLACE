@@ -41,7 +41,7 @@ app.listen(PORT, () => {
 app.post("/textupload", (req, res) => {
   console.log(req.body.id);
   console.log(req.body.content);
-
+  console.log(req.body.test);
   console.log(`Received request to post Text from ${req.body.id}`);
   const uploadText = (id, cont) => {
     con.query(

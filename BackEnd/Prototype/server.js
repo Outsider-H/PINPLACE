@@ -143,9 +143,9 @@ app.get("/model/place/group1-shard23of23.bin", (req, res) => {
 app.listen(3000, () => {
   console.log("Server on");
 });
-const auth = new Date().getTime();
 
 app.post("/loginquery", (req, res) => {
+  const auth = new Date().getTime();
   const loginQuery = (id, pw) => {
     con.query(
       `SELECT * FROM user WHERE username='${id}';`,
