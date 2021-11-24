@@ -1,8 +1,9 @@
-body {
+html, body {
     margin: 0;
     padding: 0;
     width: 100%;
-    font-family: sans-serif;
+    min-height: 100%;
+    font-family: 'NanumSquare', sans-serif;
 }
 
 a {
@@ -67,7 +68,6 @@ header {
 
 ul.navbar-entry > li.button {
     display: inline;
-    font-family: sans-serif;
     font-weight: normal;
     margin: 0 3px 0 3px;
 }
@@ -203,7 +203,6 @@ border-radius: 4px;
 .list-name {
     flex: 5;
     margin: 2px 6px;
-    font-family: sans-serif;
     font-size: 16px;
 }
 

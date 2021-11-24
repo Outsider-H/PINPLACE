@@ -1,0 +1,46 @@
+body {
+	background: #dde8ff;
+}
+
+#content {
+background: #cce0ff;
+}
+
+#login {
+	display: grid;
+	background: #bbd0ee;
+}
+
+#login > * {
+	margin: 4px;
+}
+
+.login-id-label {
+	grid-column: 1;
+	grid-row: 1;
+}
+
+.login-id {
+	grid-column: 2;
+	grid-row: 1;
+}
+
+.login-password-label {
+	grid-column: 1;
+	grid-row: 2;
+}
+
+.login-password {
+	grid-column: 2;
+	grid-row: 2;
+}
+
+.login-button {
+	grid-column: 1 / 3;
+	grid-row: 3;
+}
+
+.login-signup-button {
+	grid-column: 1 / 3;
+	grid-row: 4;
+}

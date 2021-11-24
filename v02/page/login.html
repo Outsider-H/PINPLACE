@@ -1,39 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <link href="style.css" rel="stylesheet" type="text/css" title="Style style">
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <header>
-        <div id="header">
-          <div id="logo"><a href="./start.html">PINPLACE</div>
-            <div id="navbar" class="vert-middle">
-                <ul class="navbar-entry">
-                  <li class="button"><a href="./index.html">Find Place</a></li>
-                  <li class="button"><a href="./placeRank.html">Hotplace List</a></li>
-                  <li class="button"><a href="./photoUpload.html">Upload</a></li>
-                  <li class="button"><a href="./sns.html">SNS</a></li>
-                  <li class="button"><a href="./.html">My Page</a></li>
-                </ul>
-            </div>
-        </div>
-    </header>
-    <div id="content">
-      <div id="title"><div class="vert-middle"><p id="title-text">Sign In</span></div></div>
-            <div class="login-row">
-              <label class="login-component" for="login-id">User ID:&nbsp;</label>
-              <input type="text" class="login-component" id="login-id" />
-            </div>
-            <div class="login-row">
-              <label class="login-component" for="login-pw">Password:&nbsp;</label>
-              <input type="password" class="login-component" id="login-pw" />
-            </div>
-            <div class="login-row"><button class="login-button" id="login-button">Sign In</button></div>
-          <script src="./login.js"></script>
-    </div>
-  </body>
+<head>
+	<link href="style.css" rel="stylesheet" type="text/css" title="Style style">
+	<link href="login.css" rel="stylesheet" type="text/css" title="Style style">
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>PINPLACE</title>
+</head>
+<body>
+	<header>
+		<div id="header">
+		<div id="logo"><a href="/start.html">PINPLACE</div>
+			<div id="navbar" class="vert-middle">
+				<ul class="navbar-entry">
+				<li class="button"><a href="/index.html">Find Place</a></li>
+				<li class="button"><a href="/placeRank.html">Hotplace List</a></li>
+				<li class="button"><a href="/photoUpload.html">Upload</a></li>
+				<li class="button"><a href="/sns.html">SNS</a></li>
+				<li class="button"><a href="/my">My Page</a></li>
+				</ul>
+			</div>
+		</div>
+	</header>
+	<div id="content">
+		<div id="title"><div class="vert-middle"><p id="title-text">Sign In</p></div></div>
+		<div id="login">
+			<label class="login-id-label" for="login-id">Your ID: </label>
+			<input type="text" name="id" class="login-id" id="login-id" required />
+			<label class="login-password-label" for="login-password">Your Password: </label>
+			<input type="password" name="password" class="login-password" id="login-pw" required />
+			<!--<input type="submit" class="login-button" id="login-button" value="Submit" />-->
+			<button class="login-button" id="login-button">Sign In</button>
+			<button class="login-signup-button" onclick="window.location.href='/signup.html';">Create Account</button>
+		</div>
+		<script src="./login.js"></script>
+	</div>
+</body>
 </html>

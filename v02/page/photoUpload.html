@@ -24,20 +24,20 @@
 </header>
 
 <div id="content">
-    <div id="title"><div class="vert-middle"><p id="title-text">Upload</span></div></div>
+    <div id="title"><div class="vert-middle"><p id="title-text">Upload</p></div></div>
         <div class="section-title">
-            <div class="vert-middle"><p class="section-title-text">Upload your photo!</span></div>
+            <div class="vert-middle"><p class="section-title-text">Upload your photo!</p></div>
         </div>
         <div id="preview">
         </div>
         <form method="POST" action="/imguploadform" enctype="multipart/form-data" id="sendform">
             <div class="upload-icon-place">
                 <label class="upload-button" for="upload-file-upload"><div class="tot-centred"><b class="fa fa-image"></b></div></label>
-                <input type="file" id="upload-file-upload" name="image" accept="image/*" />
+                <input type="file" id="upload-file-upload" name="image" accept="image/*" required/>
             </div>
             <div class="upload-place-dropdown">
                 <label class="upload-place-label" for="upload-place-dropdown">Where is it?&nbsp;</label>
-                <select id="upload-place-dropdown" name="place">
+                <select id="upload-place-dropdown" name="place" required>
                 </select>
             </div>
             <div class="upload-icon-place">
