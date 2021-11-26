@@ -29,7 +29,7 @@ con.connect((e) => {
 });
 
 let app = express();
-app.set('view engine', 'ejs');
+app.set("view engine", "ejs");
 app.use((req, res, next) => {
   console.log(`${new Date()}: ${req.method}=>${req.url}`);
   next();
@@ -40,7 +40,6 @@ app.use(express.static("./page"));
 app.listen(PORT, () => {
   console.log(`Serving Static on ${PORT}`);
 });
-
 
 const auth = new Date().getTime();
 
@@ -99,29 +98,32 @@ app.post("/imguploadform", upload.single("image"), (req, res) => {
 });
 
 app.get("/getplace", (req, res) => {
-    const listPlace = () => {
-        con.query(`SELECT * FROM placeserv.place ORDER BY pid ASC`, (serr, sres, sfield) => {
-            console.log(sres);
-            let ret = [];
-            sres.forEach((elem) => ret.push(elem.name));
-            console.log(ret);
-            res.end(
-                JSON.stringify({
-                    html: sres
-                    .map(
-                        (elem) =>
-                        `<option value="${elem.pid}">${elem.name}</option>`
-                    )
-                    .join(" "),
-                })
-            );
-        });
-    };
-    listPlace();
+  const listPlace = () => {
+    con.query(
+      `SELECT * FROM placeserv.place ORDER BY pid ASC`,
+      (serr, sres, sfield) => {
+        console.log(sres);
+        let ret = [];
+        sres.forEach((elem) => ret.push(elem.name));
+        console.log(ret);
+        res.end(
+          JSON.stringify({
+            html: sres
+              .map(
+                (elem) => `<option value="${elem.pid}">${elem.name}</option>`
+              )
+              .join(" "),
+          })
+        );
+      }
+    );
+  };
+  listPlace();
 });
 
 const getList = (res, measurement) => {
-  con.query(`SELECT * FROM (
+  con.query(
+    `SELECT * FROM (
       SELECT place.*, place_pop.${measurement}, image.path, image.imageid
       FROM placeserv.place
       LEFT JOIN placeserv.place_pop ON placeserv.place.pid = placeserv.place_pop.pid
@@ -129,38 +131,43 @@ const getList = (res, measurement) => {
       ORDER BY placeserv.image.imageid DESC
     ) AS a WHERE imageid IN (SELECT MAX(image.imageid) FROM image GROUP BY image.pid)
     ORDER BY ${measurement} DESC;`,
-  (serr, sres, sfield) => {
-    console.log(sres);
-    let entries = [];
-    sres.forEach((elem) => {
-      if (entries.length % 2 === 0) {
-        var evenodd = "odd-line";
-      } else {
-        var evenodd = "even-line";
-      }
-      if (entries.length === 0) {
-        var rank = " first";
-      } else if (entries.length === 1) {
-        var rank = " second";
-      } else if (entries.length === 2) {
-        var rank = " third";
-      } else {
-        var rank = "";
-      }
-      var tmp = `
+    (serr, sres, sfield) => {
+      console.log(sres);
+      let entries = [];
+      sres.forEach((elem) => {
+        if (entries.length % 2 === 0) {
+          var evenodd = "odd-line";
+        } else {
+          var evenodd = "even-line";
+        }
+        if (entries.length === 0) {
+          var rank = " first";
+        } else if (entries.length === 1) {
+          var rank = " second";
+        } else if (entries.length === 2) {
+          var rank = " third";
+        } else {
+          var rank = "";
+        }
+        var tmp = `
       <div class="list-entry ${evenodd}${rank}">
-        <div class="rank${rank}"><div class="tot-centred">${entries.length + 1}</div></div>
-        <div class="list-name"><p class="list-text"><a href="/p/${elem.pid}">${elem.name}</a></p></div>
+        <div class="rank${rank}"><div class="tot-centred">${
+          entries.length + 1
+        }</div></div>
+        <div class="list-name"><p class="list-text"><a href="/p/${elem.pid}">${
+          elem.name
+        }</a></p></div>
         <div class="list-image"><img src="${elem.path}" /></div>
       </div>`;
-      entries.push(tmp);
-    });
-    res.end(
-      JSON.stringify({
-        html: entries.join("\n"),
-      })
-    );
-  });
+        entries.push(tmp);
+      });
+      res.end(
+        JSON.stringify({
+          html: entries.join("\n"),
+        })
+      );
+    }
+  );
   console.log();
 };
 
@@ -178,59 +185,67 @@ app.get("/getmonthlylist", (req, res) => {
 
 app.get("/p/:pid", (req, res) => {
   const getPhoto = (pid) => {
-    con.query(`SELECT image.*, place.* FROM placeserv.image LEFT JOIN placeserv.place
+    con.query(
+      `SELECT image.*, place.* FROM placeserv.image LEFT JOIN placeserv.place
     ON placeserv.image.pid = placeserv.place.pid WHERE placeserv.image.pid = ${pid}
     ORDER BY placeserv.image.imageid DESC LIMIT 9`,
-    (serr, sres, sfield) => {
-      console.log(sres);
-      var pname = sres[0].name;
-      var imagePaths = [];
-      sres.forEach((elem) => {
-        imagePaths.push(elem.path);
-      });
-      res.render('placeview', {pname: pname, imagePaths: imagePaths});
-    });
+      (serr, sres, sfield) => {
+        console.log(sres);
+        var pname = sres[0].name;
+        var imagePaths = [];
+        sres.forEach((elem) => {
+          imagePaths.push(elem.path);
+        });
+        res.render("placeview", { pname: pname, imagePaths: imagePaths });
+      }
+    );
   };
   getPhoto(req.params.pid);
 });
 
 app.get("/p", (req, res) => {
   res.writeHead(302, {
-    location: '/placeRank.html',
+    location: "/placeRank.html",
   });
   res.end();
 });
 
 app.get("/u", (req, res) => {
   res.writeHead(302, {
-    location: '/photoUpload.html',
+    location: "/photoUpload.html",
   });
   res.end();
 });
 
 app.get("/s", (req, res) => {
-    res.writeHead(302, {
-        location: '/sns.html',
-    });
-    res.end();
+  res.writeHead(302, {
+    location: "/sns.html",
+  });
+  res.end();
 });
 
 app.get("/my", (req, res) => {
-    const getMyPhoto = (uid) => {
-        con.query(`SELECT image.*, user.* FROM placeserv.image LEFT JOIN placeserv.user
+  const getMyPhoto = (uid) => {
+    con.query(
+      `SELECT image.*, user.* FROM placeserv.image LEFT JOIN placeserv.user
         ON placeserv.image.uid = placeserv.user.uid
         WHERE placeserv.image.uid = ${uid}
         ORDER BY placeserv.image.imageid DESC LIMIT 9`,
-        (serr, sres, sfield) => {
-            console.log(sres);
-            var uname = sres[0].name;
-            var uimage = sres[0].uimage;
-            var imagePaths = [];
-            sres.forEach((elem) => {
-                imagePaths.push(elem.path);
-            });
-            res.render('mypage', {uname: uname, imagePaths: imagePaths, uimage: uimage});
+      (serr, sres, sfield) => {
+        console.log(sres);
+        var uname = sres[0].name;
+        var uimage = sres[0].uimage;
+        var imagePaths = [];
+        sres.forEach((elem) => {
+          imagePaths.push(elem.path);
         });
-    };
-    getMyPhoto(1); //should use actual user id
+        res.render("mypage", {
+          uname: uname,
+          imagePaths: imagePaths,
+          uimage: uimage,
+        });
+      }
+    );
+  };
+  getMyPhoto(1); //should use actual user id
 });
