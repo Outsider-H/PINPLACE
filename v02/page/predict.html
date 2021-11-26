@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head profile="http://www.w3.org/2005/10/profile">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lobster" />
+    <link href="style.css" rel="stylesheet" type="text/css" title="Style style">
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Location Search</title>
+  </head>
+  <body>
+    <header>
+      <div id="header">
+          <div id="logo"><a href="./start.html">PINPLACE</div>
+          <div id="navbar" class="vert-middle">
+              <ul class="navbar-entry">
+                  <li class="button active"><a href="./predict.html">Find Place</a></li>
+                  <li class="button"><a href="./placeRank.html">Hotplace List</a></li>
+                  <li class="button"><a href="./photoUpload.html">Upload</a></li>
+                  <li class="button"><a href="./sns.html">SNS</a></li>
+                  <li class="button"><a href="./.html">My Page</a></li>
+              </ul>
+          </div>
+      </div>
+  </header>
+  <br> <br>
+
+  <div>
+    <h1>Where is this Place?</h1>
+  </div>
+
+  <div id="pin-pos">
+    <img id=pin src="./assets/fl.gif">
+  </div>
+
+  <form id="pred" method="POST" enctype="multipart/form-data" action="/imguploadform" style="text-align:center;">
+    <input type="file" id="img" name="image" accept="image/*" />
+    <div class="imageBox"></div>
+    <br>
+    <input type="button" class="predict" id="predict-predict" value="Predict" />
+    <div class="result"></div>
+    <input type="submit" class="predict-upload" value="Upload" />
+  </form>
+
+
+
+    <script src="imagenet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

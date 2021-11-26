@@ -13,7 +13,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE `place` (
-  `pid` int(11) NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL,
   `internal` varchar(16) CHARACTER SET utf8mb3 NOT NULL,
   `name` varchar(256) CHARACTER SET utf8mb3 NOT NULL,
   PRIMARY KEY (`pid`)
@@ -23,13 +23,13 @@ CREATE TABLE `place_pop` (
   `daily` int(11) DEFAULT 0,
   `weekly` int(11) DEFAULT 0,
   `monthly` int(11) DEFAULT 0,
-  `pid` int(11) NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL,
   PRIMARY KEY (`pid`),
   CONSTRAINT `place_pop_ibfk_1` FOREIGN KEY (`pid`) REFERENCES `place` (`pid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE `image` (
-  `imageid` int(11) NOT NULL AUTO_INCREMENT,
+  `imageid` int(11) NOT NULL auto_increment,
   `uid` int(11) DEFAULT NULL,
   `pid` int(11) DEFAULT NULL,
   `path` varchar(256) CHARACTER SET utf8mb3 NOT NULL,

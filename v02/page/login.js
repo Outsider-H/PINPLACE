@@ -15,6 +15,6 @@ test.addEventListener("click", () => {
   xhr.onreadystatechange = () => {
     console.log(xhr.response);
     //Redirect
-    location.href = `/index.html`;
+    location.href = `/predict.html`;
   };
 });

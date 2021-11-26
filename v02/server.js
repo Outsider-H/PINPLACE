@@ -1,8 +1,10 @@
 const express = require("express");
-const mysql = require("mysql");
+
 const fs = require("fs");
 const multer = require("multer");
 const internal = require("stream");
+const { con } = require("./controller/sql_controller");
+const { loginqueryRouter } = require("./router/loginquery");
 require("ejs");
 let storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -14,19 +16,6 @@ let storage = multer.diskStorage({
 });
 let upload = multer({ storage: storage });
 const PORT = 8898;
-
-const con = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "root",
-  database: "placeserv",
-  multipleStatements: true,
-});
-
-con.connect((e) => {
-  if (e) throw e;
-  console.log("Connected to mySQL");
-});
 
 let app = express();
 app.set("view engine", "ejs");
@@ -43,26 +32,7 @@ app.listen(PORT, () => {
 
 const auth = new Date().getTime();
 
-app.post("/loginquery", (req, res) => {
-  const loginQuery = (id, pw) => {
-    con.query(
-      `SELECT * FROM user WHERE name='${id}';`,
-      (serr, sres, sfield) => {
-        console.log("test");
-        console.log(auth);
-        if (serr) throw serr;
-        if (sres.length === 1 && sres[0].password === pw) {
-          console.log(`[LOGIN SUCCESS] from ${id}`);
-          //   res.send("hi");
-          res.end(`${auth}`);
-        } else {
-          console.log(`[INVALID LOGIN ATTEMPT] from ${id}`);
-        }
-      }
-    );
-  };
-  loginQuery(req.body.id, req.body.password);
-});
+app.use("/loginquery", loginqueryRouter);
 
 app.get("/main", (req, res) => {
   console.log(req.query.auth);
@@ -201,6 +171,13 @@ app.get("/p/:pid", (req, res) => {
     );
   };
   getPhoto(req.params.pid);
+});
+
+app.get("/predict", (req, res) => {
+  res.writeHead(302, {
+    location: "/predict.html",
+  });
+  res.end();
 });
 
 app.get("/p", (req, res) => {
