@@ -1,12 +1,17 @@
 const express = require("express");
-
+const cookieParser = require("cookie-parser");
 const fs = require("fs");
 const multer = require("multer");
 const internal = require("stream");
 const { con } = require("./controller/sql_controller");
 const { loginqueryRouter } = require("./router/loginquery");
 const { redirectRouter } = require("./router/redirect");
+const { getlistRouter } = require("./router/getlist");
+const { signupRouter } = require("./router/signup");
 require("ejs");
+
+const PORT = 8898;
+
 let storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, "./page/resources");
@@ -16,9 +21,9 @@ let storage = multer.diskStorage({
   },
 });
 let upload = multer({ storage: storage });
-const PORT = 8898;
 
 let app = express();
+app.use(cookieParser());
 app.set("view engine", "ejs");
 app.use((req, res, next) => {
   console.log(`${new Date()}: ${req.method}=>${req.url}`);
@@ -27,13 +32,15 @@ app.use((req, res, next) => {
 app.use(express.urlencoded({ extended: false, limit: "50mb" }));
 app.use(express.json({ limit: "50mb" }));
 app.use(express.static("./page"));
+
 app.listen(PORT, () => {
   console.log(`Serving Static on ${PORT}`);
 });
 
 const auth = new Date().getTime();
-
+app.use("/get", getlistRouter);
 app.use("/loginquery", loginqueryRouter);
+app.use("/sign", signupRouter);
 
 app.get("/main", (req, res) => {
   console.log(req.query.auth);
@@ -90,68 +97,6 @@ app.get("/getplace", (req, res) => {
     );
   };
   listPlace();
-});
-
-const getList = (res, measurement) => {
-  con.query(
-    `SELECT * FROM (
-      SELECT place.*, place_pop.${measurement}, image.path, image.imageid
-      FROM placeserv.place
-      LEFT JOIN placeserv.place_pop ON placeserv.place.pid = placeserv.place_pop.pid
-      LEFT JOIN placeserv.image ON placeserv.place.pid = placeserv.image.pid
-      ORDER BY placeserv.image.imageid DESC
-    ) AS a WHERE imageid IN (SELECT MAX(image.imageid) FROM image GROUP BY image.pid)
-    ORDER BY ${measurement} DESC;`,
-    (serr, sres, sfield) => {
-      console.log(sres);
-      let entries = [];
-      sres.forEach((elem) => {
-        if (entries.length % 2 === 0) {
-          var evenodd = "odd-line";
-        } else {
-          var evenodd = "even-line";
-        }
-        if (entries.length === 0) {
-          var rank = " first";
-        } else if (entries.length === 1) {
-          var rank = " second";
-        } else if (entries.length === 2) {
-          var rank = " third";
-        } else {
-          var rank = "";
-        }
-        var tmp = `
-      <div class="list-entry ${evenodd}${rank}">
-        <div class="rank${rank}"><div class="tot-centred">${
-          entries.length + 1
-        }</div></div>
-        <div class="list-name"><p class="list-text"><a href="/p/${elem.pid}">${
-          elem.name
-        }</a></p></div>
-        <div class="list-image"><img src="${elem.path}" /></div>
-      </div>`;
-        entries.push(tmp);
-      });
-      res.end(
-        JSON.stringify({
-          html: entries.join("\n"),
-        })
-      );
-    }
-  );
-  console.log();
-};
-
-app.get("/getdailylist", (req, res) => {
-  getList(res, "daily");
-});
-
-app.get("/getweeklylist", (req, res) => {
-  getList(res, "weekly");
-});
-
-app.get("/getmonthlylist", (req, res) => {
-  getList(res, "monthly");
 });
 
 app.get("/p/:pid", (req, res) => {

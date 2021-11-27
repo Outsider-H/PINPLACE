@@ -1,42 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<link href="./css/style.css" rel="stylesheet" type="text/css" title="Style style">
-	<link href="./css/signup.css" rel="stylesheet" type="text/css" title="Style style">
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>PINPLACE</title>
-</head>
-<body>
-	<header>
-		<div id="header">
-		<div id="logo"><a href="/index.html">PINPLACE</div>
-			<div id="navbar" class="vert-middle">
+  <head>
+    <link
+      href="./css/style.css"
+      rel="stylesheet"
+      type="text/css"
+      title="Style style"
+    />
+    <link
+      href="./css/signup.css"
+      rel="stylesheet"
+      type="text/css"
+      title="Style style"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PINPLACE</title>
+  </head>
+  <body>
+    <header>
+      <div id="header">
+        <div id="logo"><a href="/index.html">PINPLACE</a></div>
+        <!-- <div id="navbar" class="vert-middle">
 				<ul class="navbar-entry">
 				<li class="button"><a href="/redirect/predict">Find Place</a></li>
 				<li class="button"><a href="/placeRank.html">Hotplace List</a></li>
 				<li class="button"><a href="/photoUpload.html">Upload</a></li>
 				<li class="button"><a href="/sns.html">SNS</a></li>
-				<li class="button"><a href="/redirect/my">My Page</a></li>
+				<li class="button" id="my-redirect"><a href="/redirect/my">My Page</a></li>
 				</ul>
-			</div>
-		</div>
-	</header>
-	<div id="content">
-		<div id="title"><div class="vert-middle"><p id="title-text">Create Account</p></div></div>
-		<form method="POST" action="/signupform" enctype="application/x-www-form-urlencoded" id="signup-info">
-			<label class="signup-info-id-label" for="signup-info-id">Your ID: </label>
-			<input type="text" name="id" class="signup-info-id" id="signup-info-id" required />
-			<label class="signup-info-name-label" for="signup-info-name">Your Nickname: </label>
-			<input type="text" name="name" class="signup-info-name" id="signup-info-name" required />
-			<label class="signup-info-password-label" for="signup-info-password">Your Password: </label>
-			<input type="password" name="password" class="signup-info-password" id="signup-info-password" required />
-			<label class="signup-info-pwagain-label" for="signup-info-pwagain">Password again: </label>
-			<input type="password" name="pwagain" class="signup-info-pwagain" id="signup-info-pwagain" required />
-			<input type="submit" class="signup-button" id="signup-button" value="Submit" />
-		</form>
-		<script src="./js/signup.js"></script>
-	</div>
-</body>
+			</div> -->
+      </div>
+    </header>
+    <div id="content">
+      <div id="title">
+        <div class="vert-middle"><p id="title-text">Create Account</p></div>
+      </div>
+      <form
+        method="POST"
+        action="/signupform"
+        enctype="application/x-www-form-urlencoded"
+        id="signup-info"
+      >
+        <label class="signup-info-id-label" for="signup-info-id"
+          >Your ID:
+        </label>
+        <input
+          type="text"
+          name="id"
+          class="signup-info-id"
+          id="signup-info-id"
+          required
+        />
+        <label class="signup-info-name-label" for="signup-info-name"
+          >Your Nickname:
+        </label>
+        <input
+          type="text"
+          name="name"
+          class="signup-info-name"
+          id="signup-info-name"
+          required
+        />
+        <label class="signup-info-password-label" for="signup-info-password"
+          >Your Password:
+        </label>
+        <input
+          type="password"
+          name="password"
+          class="signup-info-password"
+          id="signup-info-password"
+          required
+        />
+        <label class="signup-info-pwagain-label" for="signup-info-pwagain"
+          >Password again:
+        </label>
+        <input
+          type="password"
+          name="pwagain"
+          class="signup-info-pwagain"
+          id="signup-info-pwagain"
+          required
+        />
+        <input
+          type="submit"
+          class="signup-button"
+          id="signup-button"
+          value="Submit"
+        />
+      </form>
+    </div>
+    <script src="./js/signup.js"></script>
+    <script src="./js/myredirec.js"></script>
+  </body>
 </html>

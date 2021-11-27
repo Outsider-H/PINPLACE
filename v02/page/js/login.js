@@ -14,7 +14,19 @@ test.addEventListener("click", () => {
   xhr.send(`id=${id.value}&password=${pw.value}`);
   xhr.onreadystatechange = () => {
     console.log(xhr.response);
+    const json = JSON.parse(xhr.response);
+    console.log(json.success);
+
+    if (json.success) {
+      console.log("Success");
+      sessionStorage.setItem("userId", json.uid);
+      localStorage.setItem("userId", json.uid);
+      location.href = "/predict.html";
+    } else {
+      console.log(`${json.statement}`);
+      alert(json.statement);
+    }
     //Redirect
-    location.href = `/predict.html`;
+    // location.href = `/predict.html`;
   };
 });

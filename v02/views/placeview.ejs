@@ -1,45 +1,61 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <link href="/style.css" rel="stylesheet" type="text/css" title="Style style">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="UTF-8">
+  <head>
+    <link
+      href="/css/style.css"
+      rel="stylesheet"
+      type="text/css"
+      title="Style style"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
     <title>Test Page</title>
-</head>
-<body>
-<header>
-    <div id="header">
+  </head>
+  <body>
+    <header>
+      <div id="header">
         <div id="logo"><a href="/">PINPLACE</a></div>
         <div id="navbar" class="vert-middle">
-            <ul class="navbar-entry">
-                <li class="button">Find Place</li>
-                <li class="button active"><a href='/p'>Hotplace List</a></li>
-                <li class="button"><a href='/u'>Upload</a></li>
-                <li class="button">SNS</li>
-                <li class="button">My Page</li>
-            </ul>
+          <ul class="navbar-entry">
+            <li class="button">Find Place</li>
+            <li class="button active">
+              <a href="/redirect/p">Hotplace List</a>
+            </li>
+            <li class="button"><a href="/redirect/u">Upload</a></li>
+            <li class="button">SNS</li>
+            <li class="button">My Page</li>
+          </ul>
         </div>
-    </div>
-</header>
+      </div>
+    </header>
 
-<div id="content">
-    <div id="title"><div class="vert-middle"><p id="title-text">Hotplace</p></div></div>
-    <div id="subtitle">
+    <div id="content">
+      <div id="title">
+        <div class="vert-middle"><p id="title-text">Hotplace</p></div>
+      </div>
+      <div id="subtitle">
         <div class="vert-middle"><p id="subtitle-text"><%= pname %></p></div>
-    </div>
-    <div id="main-photo">
+      </div>
+      <div id="main-photo">
         <img src="<%= imagePaths[0] %>" />
-    </div>
-    <div id="place-buttons">
-        <div id="place-button-star"><div class="tot-centred"><b class="fa fa-star"></b></div></div>
-        <div id="place-button-upload"><div class="tot-centred"><b class="fa fa-upload"></b></div></div>
-    </div>
-    <div id="other-photos">
+      </div>
+      <div id="place-buttons">
+        <div id="place-button-star">
+          <div class="tot-centred"><b class="fa fa-star"></b></div>
+        </div>
+        <div id="place-button-upload">
+          <div class="tot-centred"><b class="fa fa-upload"></b></div>
+        </div>
+      </div>
+      <div id="other-photos">
         <% imagePaths.slice(1).forEach((path) => { %>
-            <img src="<%= path %>" />
+        <img src="<%= path %>" />
         <% }) %>
+      </div>
     </div>
-</div>
-</body>
+  </body>
 </html>

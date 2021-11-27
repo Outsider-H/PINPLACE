@@ -17,7 +17,7 @@ form.addEventListener("submit", (event) => {
   }
 
   const xhr = new XMLHttpRequest();
-  xhr.open("POST", "/signupform");
+  xhr.open("POST", "/sign/signupform");
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   xhr.send(
     `id=${data.get("id")}&name=${data.get("name")}&password=${data.get(
