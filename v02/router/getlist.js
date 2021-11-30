@@ -59,7 +59,7 @@ getlistRouter.get("/weeklylist", (req, res) => {
   getList(res, "weekly");
 });
 
-getlistRouter.get("/get/monthlylist", (req, res) => {
+getlistRouter.get("/monthlylist", (req, res) => {
   getList(res, "monthly");
 });
 
