@@ -40,7 +40,30 @@ CREATE TABLE `image` (
   CONSTRAINT `image_ibfk_2` FOREIGN KEY (`pid`) REFERENCES `place` (`pid`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+INSERT INTO `place` (`pid`, `internal`, `name`) VALUES
+(0,'ddp','Dongdaemun Design Plaza'),
+(1,'gyeongui','Gyeongui Line Forest Park'),
+(2,'naksan','Naksan Park'),
+(3,'namsan','N Seoul Tower'),
+(4,'hyundai','The Hyundai Seoul'),
+(5,'myeongdong','Myeongdong Cathedral'),
+(6,'ikseon','Ikseon-dong Hanok Village'),
+(7,'jamsil','Lotte World Tower'),
+(8,'sebit','Sebitseom'),
+(9,'haebangchon','Haebangchon');
 
+/*Random values*/
+INSERT INTO `place_pop` (`daily`, `weekly`, `monthly`, `pid`) VALUES
+(705,407,200,0),
+(998,947,790,1),
+(219,198,120,2),
+(811,592,242,3),
+(642,301,56,4),
+(548,779,239,5),
+(11,267,410,6),
+(983,427,266,7),
+(229,264,278,8),
+(207,259,678,9);
 
 
 
