@@ -42,8 +42,15 @@
  / Find Location Page / List Up Page / Upload Picture Page / SNS Page / My Page  ≫ </p>
  <br>
 <h4> c. Description of each page  <h4>
-<br>
-	<p>
+
+<p>
+PINPLACE Pages
+	└a.coverpage: Since it is the first screen that users face, We designed the logo ourselves because we thought we had to firmly convey the platform brand image.
+	└proposal.pdf
+	└requirements.pdf
+	└design_specification.pdf
+
+	
 a.	Cover page <br>
  Since it is the first screen that users face, We designed the logo ourselves because we thought we had to firmly convey the platform brand image.
 <br>
