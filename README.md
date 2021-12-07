@@ -56,7 +56,6 @@
 <h3> c. Description of each page  </h3>
 
 <p>
-
 	
 a.	Cover page :
  Since it is the first screen that users face, We designed the logo ourselves because we thought we had to firmly convey the platform brand image.
@@ -65,7 +64,6 @@ a.	Cover page :
 b.	Start Page :
  This page is expressed in fancy graphics to roughly imply the functionality of our platform<br>
 	<br>
-
 
 c.	User Guide Page :
  For optimal UX, we made this page with Card UI. Every time user turn the page, the content and design are designed to be different. <br>
