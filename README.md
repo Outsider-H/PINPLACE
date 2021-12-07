@@ -44,7 +44,7 @@
  <p> The following is a user flow diagram, which shows the connectivity and hierarchy between our web pages.
  </p>
 <img src="./userflow.png">
-<br>
+ <br>
 
 ------------------------------------------------------------------------------
 
