@@ -26,13 +26,12 @@
 
  “CNN based place recognition web app”
 
-- 01. Service of place recognition feature & SNS feature.
- <br>
-- 02. Collect data set & Build CNN models which have the best accuracy
- <br>
-- 03. Work on UI design & graphic Design
- <br>
-- 04. Apply CNN models on web app
+
+  1. Service of place recognition feature & SNS feature.
+  2. Collect data set & Build CNN models which have the best accuracy
+  3. Work on UI design & graphic Design
+  4. Apply CNN models on web app
+   
 <br>
 
 
@@ -132,9 +131,7 @@ This is the own user page for a user logged in, which shows pictures uploaded by
 Total 10 class
 
 ```
-Dongdaemun_Design_Plaza, Gyeongui_Line_Forest_Park, Naksan_Park,
-Namsan_Seoul_Tower, The_Hyundai_Seoul_Mall,  Myeongdong_Cathedral,
-Ikseon_Dong_Hanok_Village, Jamsil_Lotte_Tower, Han_River_Sebitseom,
+Dongdaemun_Design_Plaza, Gyeongui_Line_Forest_Park, Naksan_Park, Namsan_Seoul_Tower, The_Hyundai_Seoul_Mall,  Myeongdong_Cathedral, Ikseon_Dong_Hanok_Village, Jamsil_Lotte_Tower, Han_River_Sebitseom,
 Haebangchon
 ```
 
@@ -175,7 +172,6 @@ We Finaly choose ResNet50 model.
 ## 2. Inital UI design
 
 - [UI Design](https://www.figma.com/file/kPRSZqt6wzZ49x4qpmfjma/캡스톤-UI?node-id=0%3A1)
-<br>
 
 ## 3. Final Report
 
