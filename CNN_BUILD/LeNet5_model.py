@@ -1,8 +1,9 @@
+#google colab으로 파일 디렉터리 연결
 from google.colab import drive
 drive.mount('/content/gdrive')
 
 #데이터 전처리 및 파일 업로드
-#파일사이즈는 64*64 크기로 줄여서 입력하였고 카테고리로 10가지 장소을 입력하여 npy로 저장
+#파일사이즈는 128*128 크기로 줄여서 입력하였고 카테고리로 10가지 장소을 입력하여 npy로 저장
 from PIL import Image
 import os, glob, numpy as np
 from sklearn.model_selection import train_test_split
@@ -10,12 +11,13 @@ import tensorflow as tf
 
 
 caltech_dir = "/content/gdrive/MyDrive/place_dataset"
+# class list
 categories = ["Dongdaemun_Design_Plaza", "Gyeongui_Line_Forest_Park", "Naksan_Park", "Namsan_Seoul_Tower","The_Hyundai_Seoul_Mall", 
               "Myeongdong_Cathedral", "Ikseon_Dong_Hanok_Village", "Jamsil_Lotte_Tower", "Han_River_Sebitseom", "Haebangchon"]
 nb_classes = len(categories)
 
-image_w = 64
-image_h = 64
+image_w = 128
+image_h = 128
 
 pixels = image_h * image_w * 3
 
@@ -46,6 +48,8 @@ y = np.array(y)
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1)
 xy = (X_train, X_test, y_train, y_test)
+
+#data set을 npy형태로 
 np.save("/content/gdrive/MyDrive/image_data.npy", xy)
 
 #npy파일을 가져온다.
@@ -77,49 +81,18 @@ nb_classes = len(categories)
 X_train = X_train.astype(float) / 255
 X_test = X_test.astype(float) / 255
 
-#CNN모델 생성
+#CNN모델 생성(lenet-5)
 
 with tf.device('/device:GPU:0'):
-    model = Sequential()
-    model.add(Conv2D(32, (3,3), padding="same", input_shape=X_train.shape[1:], activation='relu'))
-    model.add(MaxPooling2D(pool_size=(2,2)))
-    model.add(Dropout(0.25))
-
-    model.add(Conv2D(32, (3,3), padding="same", input_shape=X_train.shape[1:], activation='relu'))
-    model.add(MaxPooling2D(pool_size=(2,2)))
-    model.add(Dropout(0.25))
-
-    model.add(Conv2D(64, (3,3), padding="same", activation='relu'))
-    model.add(MaxPooling2D(pool_size=(2,2)))
-    model.add(Dropout(0.25))
-
-    model.add(Conv2D(64, (3,3), padding="same", activation='relu'))
-    model.add(MaxPooling2D(pool_size=(2,2)))
-    model.add(Dropout(0.25))
-
-    model.add(Conv2D(128, (3,3), padding="same", activation='relu'))
-    model.add(Conv2D(128, (3,3), padding="same", activation='relu'))
-    model.add(MaxPooling2D(pool_size=(2,2)))
-    model.add(Dropout(0.25))
-
-    model.add(Conv2D(128, (3,3), padding="same", activation='relu'))
-    model.add(MaxPooling2D(pool_size=(2,2)))
-    model.add(Dropout(0.25))
-
-    model.add(Flatten())
-    model.add(Dense(256, activation='relu'))
-    model.add(Dropout(0.5))
-    
-    model.add(Dense(nb_classes, activation='softmax'))
-    model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
-    model_dir = './model'
-    
-    if not os.path.exists(model_dir):
-        os.mkdir(model_dir)
-    
-    model_path = model_dir + '/multi_img_classification.model'
-    checkpoint = ModelCheckpoint(filepath=model_path , monitor='val_loss', verbose=1, save_best_only=True)
-    early_stopping = EarlyStopping(monitor='val_loss', patience=6)
+  model = Sequential()
+  model.add(Conv2D(20, kernel_size = 5, padding="same", input_shape=(128,128,3), activation="relu"))
+  model.add(MaxPooling2D(pool_size = (2,2), strides = (2,2)))
+  model.add(Conv2D(50, kernel_size = 5, padding="same", activation="relu"))
+  model.add(MaxPooling2D(pool_size = (2,2), strides = (2,2)))
+  model.add(Flatten())
+  model.add(Dense(units=500,activation="relu"))
+  model.add(Dense(units=10, activation="softmax"))
+  model.compile(loss='categorical_crossentropy', optimizer='Nadam', metrics=['accuracy'])
 
 #모델 형태를 표로 요약
 model.summary()
@@ -131,7 +104,8 @@ history = model.fit(X_train, y_train, batch_size=32, epochs=50, validation_split
 #모델 정확도 출력
 print("정확도 : %.4f" % (model.evaluate(X_test, y_test)[1]))
 
-
+#모델 저장하기
+model.save('/content/gdrive/MyDrive/lenet.h5')
 
 import matplotlib.pyplot as plt
 # summarize history for accuracy
@@ -150,3 +124,5 @@ plt.ylabel('loss')
 plt.xlabel('epoch')
 plt.legend(['train', 'test'], loc='upper left')
 plt.show()
+
+
