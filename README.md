@@ -5,7 +5,7 @@
 > Topic : CNN based Location Image Search and its Adaptation to Social Network, PINPLACE
 >
 > Team Member : 엄지용, 이지섭, 정채원, 채승윤, 홍성준
-> 
+> <img src="./intro_team.png">
 > Repository Structure
 > 
 [![——————————————————————————](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#license)
@@ -13,7 +13,6 @@
 
 # Introudction of PINPLACE
 
-[![——————————————————————————](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#license)
 
 ## 0. Summary
 
@@ -39,70 +38,72 @@
 
 
 ## 2. Application's Structure
-### a. User Flow
- <p> The following is a user flow diagram, which shows the connectivity and hierarchy between our web pages.
- </p>
+- ### User Flow
+ ```
+ The following is a user flow diagram, which shows the connectivity and hierarchy between our web pages.
+ ```
+
 <img src="./userflow.png">
  <br>
 
 ------------------------------------------------------------------------------
 
-### b. Page Lists (10 pages)
-<p>≪  Cover page / Start Page / User Guide Page / Signup Page / Login Page <br> <br>
- / Find Location Page / List Up Page / Upload Picture Page / SNS Page / My Page  ≫ </p>
+- ### Page Lists (10 pages)
+```
+≪  Cover page / Start Page / User Guide Page / Signup Page / Login Page/
+ Find Location Page / List Up Page / Upload Picture Page / SNS Page / My Page  ≫
+ ```
+
+ <img src="./overallui.png">
  
 
 ------------------------------------------------------------------------------
 
-### c. Description of each page
+- ### Description of each page
 
-<p>
 	
-a.	Cover page :
+  - Cover page :
  Since it is the first screen that users face, We designed the logo ourselves because we thought we had to firmly convey the platform brand image.
 <br>
 
-b.	Start Page :
+  - Start Page :
  This page is expressed in fancy graphics to roughly imply the functionality of our platform<br>
 
-c.	User Guide Page :
+  - User Guide Page :
  For optimal UX, we made this page with Card UI. Every time user turn the page, the content and design are designed to be different. <br>
 
 
-d.	Sign Up Page :
+  - Sign Up Page :
  This page is for new users who want to make an account for this service. Currently this includes four text or password boxes, and a submission button. <br>
 
-
-
-e.	Login Page :
+  - Login Page :
  To use the service, users need to sign in via this page. Among the information provided in the sign-up page, ID is unique for each user: thus, ID and password are needed to log in. Additionally, there is the button to the sign-up page for who doesn’t have an account for this service. <br>
 
 
 
-f.	Find Location Page :
+  - Find Location Page :
  This page is core function page. We connect with CNN model that we made ourselves.  <br>
 
 
-g.	List Up page :
+  - List Up page :
  This page shows the list of places serviced, by popularity. Popularity can be measured by daily, weekly, or monthly. Each place entry is clickable and shows a subpage for that place. <br>
 
 
-h.	Upload Picture Page :
+  - Upload Picture Page :
  This page is prepared for improving AI model, so the location information for the picture is necessary. The dropdown list for locations needed is served. <br>
 
 
  
-i.	SNS Page :
+  - SNS Page :
 On the SNS page, you can see recommendations for places shared by celebrities.
 
 
-j.	My Page :
+  - My Page :
 This is the own user page for a user logged in, which shows pictures uploaded by that user from find location page. 
 
+[![——————————————————————————](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#license)
 
 <br>
- 
-</p>
 
 ## 3. CNN Build
 
@@ -162,6 +163,14 @@ We Finaly choose ResNet50 model.
 
 [![——————————————————————————](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#license)
 
+
+# Project Progress
+
+<h3> CNN Part </h3>
+<img src="./cnn_progress.png">
+<br>
+<h3> Web Part </h3>
+<img src="./web_progress.png">
 
 # Output
 
