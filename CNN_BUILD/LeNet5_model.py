@@ -4,14 +4,17 @@ drive.mount('/content/gdrive')
 
 #데이터 전처리 및 파일 업로드
 #파일사이즈는 128*128 크기로 줄여서 입력하였고 카테고리로 10가지 장소을 입력하여 npy로 저장
+#데이터 전처리 및 파일 업로드
+#파일사이즈는 128*128 크기로 줄여서 입력하였고 카테고리로 10가지 장소을 입력하여 npy로 저장
 from PIL import Image
 import os, glob, numpy as np
 from sklearn.model_selection import train_test_split
 import tensorflow as tf
+from PIL import ImageFile
+ImageFile.LOAD_TRUNCATED_IMAGES = True
 
 
-caltech_dir = "/content/gdrive/MyDrive/place_dataset"
-# class list
+caltech_dir = "/content/gdrive/MyDrive/images_s4"
 categories = ["Dongdaemun_Design_Plaza", "Gyeongui_Line_Forest_Park", "Naksan_Park", "Namsan_Seoul_Tower","The_Hyundai_Seoul_Mall", 
               "Myeongdong_Cathedral", "Ikseon_Dong_Hanok_Village", "Jamsil_Lotte_Tower", "Han_River_Sebitseom", "Haebangchon"]
 nb_classes = len(categories)
@@ -46,7 +49,7 @@ y = np.array(y)
 
 
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
 xy = (X_train, X_test, y_train, y_test)
 
 #data set을 npy형태로 
@@ -81,7 +84,7 @@ nb_classes = len(categories)
 X_train = X_train.astype(float) / 255
 X_test = X_test.astype(float) / 255
 
-#CNN모델 생성(lenet-5)
+#CNN모델 생성(Lenet5 model)
 
 with tf.device('/device:GPU:0'):
   model = Sequential()
@@ -99,7 +102,8 @@ model.summary()
 
 #모델 학습하기
 
-history = model.fit(X_train, y_train, batch_size=32, epochs=50, validation_split=0.1, callbacks=[checkpoint, early_stopping])
+with tf.device('/device:GPU:0'):
+  history = model.fit(X_train, y_train, batch_size=32, epochs=10, validation_split=0.2)
 
 #모델 정확도 출력
 print("정확도 : %.4f" % (model.evaluate(X_test, y_test)[1]))
@@ -124,5 +128,3 @@ plt.ylabel('loss')
 plt.xlabel('epoch')
 plt.legend(['train', 'test'], loc='upper left')
 plt.show()
-
-
