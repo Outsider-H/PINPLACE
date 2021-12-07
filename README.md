@@ -24,9 +24,7 @@
 
 ## 1. Objective
 
- ```
  “CNN based place recognition web app”
- ```
 
 - 01. Service of place recognition feature & SNS feature.
  <br>
