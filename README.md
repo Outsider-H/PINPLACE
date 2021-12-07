@@ -59,7 +59,7 @@
 	
 a.	Cover page :
  Since it is the first screen that users face, We designed the logo ourselves because we thought we had to firmly convey the platform brand image.
-<br><br>
+<br>
 
 b.	Start Page :
  This page is expressed in fancy graphics to roughly imply the functionality of our platform<br>
