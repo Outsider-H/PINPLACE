@@ -15,15 +15,18 @@
 
 [![——————————————————————————](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#license)
 
-<h2>0. Summary</h2>
+## 0. Summary
+
 <img src="./pinplace.png">
 <br>
 
 [![——————————————————————————](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#license)
 
-<h2> 1. Objective </h2>
+## 1. Objective
+ ```
  “CNN based place recognition web app”
- <br>
+ ```
+
 - 01. Service of place recognition feature & SNS feature.
  <br>
 - 02. Collect data set & Build CNN models which have the best accuracy
@@ -37,8 +40,8 @@
 [![——————————————————————————](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#license)
 
 
-<h2> 2. Application's Structure </h2>
-<h3> a. User Flow </h3>
+## 2. Application's Structure
+### a. User Flow
  <p> The following is a user flow diagram, which shows the connectivity and hierarchy between our web pages.
  </p>
 <img src="./userflow.png">
@@ -46,14 +49,14 @@
 
 ------------------------------------------------------------------------------
 
-<h3> b. Page Lists (10 pages) </h3>
+### b. Page Lists (10 pages)
 <p>≪  Cover page / Start Page / User Guide Page / Signup Page / Login Page <br> <br>
  / Find Location Page / List Up Page / Upload Picture Page / SNS Page / My Page  ≫ </p>
  
 
 ------------------------------------------------------------------------------
 
-<h3> c. Description of each page  </h3>
+### c. Description of each page
 
 <p>
 	
@@ -104,17 +107,84 @@ This is the own user page for a user logged in, which shows pictures uploaded by
  
 </p>
 
+## 3. CNN Build
+
+### CNN model spec
+
+- ResNet50 model is adopted
+
+- Total image data : 25,450
+
+- Training & validation data: 17,815
+
+- Input Size : 128 * 128
+
+- Train set, Validation set, Test set : 5:2:3
+
+- Classes : 10
+
+- Batch size : 32  epoch : 80
+
+- Optimizer : Nadam
+
+------------------------------------------------------------------------------
+
+### class List
+
+Total 10 class
+
+```
+Dongdaemun_Design_Plaza, Gyeongui_Line_Forest_Park, Naksan_Park, Namsan_Seoul_Tower, The_Hyundai_Seoul_Mall,  Myeongdong_Cathedral, Ikseon_Dong_Hanok_Village, Jamsil_Lotte_Tower, Han_River_Sebitseom,
+Haebangchon
+```
+
+------------------------------------------------------------------------------
+
+### Tried CNN models
+
+- Lenet-5 has three convolution layer, two pooling layer, one fully-connected layer and this have about 60,000 parameter to learn. This model is basic model of CNN.
+- AlexNet model has five convolution layer, three pooling layer, two local response normalization layer, one fully-connected layer and this have about 62,000,000 parameter to learn.
+- VGG16 model has 13 convolution layer, 5 pooling layer, three fully-connected layer and this have about 138,000,000 parameter to learn. This is much deeper model than AlexNet.
+- ResNet model used idea of "skip connection" which solve the gradient vanishing problem which happens when model is deeper. It has 49 convolution layer with pooling layer and one fully-connected layer.
+
+------------------------------------------------------------------------------
+
+### Results of each models
+
+|Model|Lenet-5|AlexNet|VGG16|ResNet50|
+|:---:|:---:|:---:|:---:|:---:|
+|Accuracy|66.3%|13.31%|12.79%|91.12%|
+
+We Finaly choose ResNet50 model.
+
+------------------------------------------------------------------------------
+
+### Final Selected model
+
+- [Final Model File](https://drive.google.com/file/d/1MFIPT5ijsCOwLAdOsRyfCbfzhh4M_r0I/view?usp=sharing) (If you want to download the trained model file click this)
+
 [![——————————————————————————](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#license)
 
 
 # Output
-<h3> 1. Inital UI design </h3>
-https://www.figma.com/file/kPRSZqt6wzZ49x4qpmfjma/캡스톤-UI?node-id=0%3A1
-<br>
-<h3> 2. Final Report </h3>
-<br>
-<h3> 3. Final Presentation </h3>
-<br>
-<h3> 4. DEMO </h3>
 
+## 1. Github Repository
 
+- [Team H repository](https://github.com/Outsider-H/PINPLACE.git)
+
+## 2. Inital UI design
+
+- [UI Design](https://www.figma.com/file/kPRSZqt6wzZ49x4qpmfjma/캡스톤-UI?node-id=0%3A1)
+<br>
+
+## 3. Final Report
+
+- [Final Report By Team H](https://github.com/SecAI-Lab/SWE3028/blob/main/Team-H/Capstone_final_report_team_H.pdf)
+
+## 4. Final Presentation
+
+- [Final presentation](https://github.com/SecAI-Lab/SWE3028/blob/main/final/Capstone_final_presentation_team_H.pdf)
+
+## 5. DEMO
+
+- [Demo vedio]()
