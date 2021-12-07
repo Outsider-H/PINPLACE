@@ -10,10 +10,10 @@
  
 
 # PINPLACE
-<h3>0.Summary</h3>
+<h3>0. Summary</h3>
 <img src="./pinplace.png">
 <br>
-<br>
-
-<h3> UI design </h3>
+<h3> 1. Inital UI design </h3>
 https://www.figma.com/file/kPRSZqt6wzZ49x4qpmfjma/캡스톤-UI?node-id=0%3A1
+<br>
+<h3> 2. Application's Structure </h3>
