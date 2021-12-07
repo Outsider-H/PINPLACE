@@ -10,7 +10,6 @@
  
 
 # PINPLACE
-<br>
 <h3>Summary</h3>
 <img src="./pinplace.png">
 <br>
