@@ -15,13 +15,13 @@
 
 [![——————————————————————————](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#license)
 
-<h3>0. Summary</h3>
+<h2>0. Summary</h2>
 <img src="./pinplace.png">
 <br>
 
 [![——————————————————————————](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#license)
 
-<h3> 1. Objective </h3>
+<h2> 1. Objective </h2>
  “CNN based place recognition web app”
  <br>
 - 01. Service of place recognition feature & SNS feature.
@@ -37,10 +37,10 @@
 [![——————————————————————————](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#license)
 
 
-<h3> 2. Application's Structure </h3>
+<h2> 2. Application's Structure </h2>
  <br>
 
-<h4> a. User Flow <h4>
+<h3> a. User Flow </h3>
  <p> The following is a user flow diagram, which shows the connectivity and hierarchy between our web pages.
  </p>
 <img src="./userflow.png">
@@ -48,14 +48,14 @@
 
 ------------------------------------------------------------------------------
 
-<h4> b. Page Lists (10 pages) <h4>
+<h3> b. Page Lists (10 pages) </h3>
 <p>≪  Cover page / Start Page / User Guide Page / Signup Page / Login Page <br> <br>
  / Find Location Page / List Up Page / Upload Picture Page / SNS Page / My Page  ≫ </p>
  <br>
 
 ------------------------------------------------------------------------------
 
-<h4> c. Description of each page  <h4>
+<h3> c. Description of each page  </h3>
 
 <p>
 
