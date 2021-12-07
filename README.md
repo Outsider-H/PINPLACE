@@ -32,6 +32,7 @@
 
 
 <h3> 2. Application's Structure </h3>
+<img src="./userflow.png">
 
 
 
