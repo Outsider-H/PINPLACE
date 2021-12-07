@@ -15,10 +15,11 @@
 
 [![——————————————————————————](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#license)
 
-
 <h3>0. Summary</h3>
 <img src="./pinplace.png">
 <br>
+
+[![——————————————————————————](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#license)
 
 <h3> 1. Objective </h3>
  “CNN based place recognition web app”
@@ -33,6 +34,7 @@
 <br>
 
 
+[![——————————————————————————](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#license)
 
 
 <h3> 2. Application's Structure </h3>
