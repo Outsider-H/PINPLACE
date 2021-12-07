@@ -37,8 +37,8 @@
  </p>
 <img src="./userflow.png">
 <br>
-<h4> b. Page Lists <h4>
-<p>≪  Cover page / Start Page / User Guide Page / Signup Page / Login Page 
+<h4> b. Page Lists (10 pages) <h4>
+<p>≪  Cover page / Start Page / User Guide Page / Signup Page / Login Page <br>
  / Find Location Page / List Up Page / Upload Picture Page / SNS Page / My Page  ≫ </p>
 
  
