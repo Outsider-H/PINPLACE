@@ -51,7 +51,7 @@
 <h3> b. Page Lists (10 pages) </h3>
 <p>≪  Cover page / Start Page / User Guide Page / Signup Page / Login Page <br> <br>
  / Find Location Page / List Up Page / Upload Picture Page / SNS Page / My Page  ≫ </p>
- <br>
+ 
 
 ------------------------------------------------------------------------------
 
