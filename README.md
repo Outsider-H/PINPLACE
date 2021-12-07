@@ -95,7 +95,6 @@ h.	Upload Picture Page :
 
  
 i.	SNS Page :
-
 On the SNS page, you can see recommendations for places shared by celebrities.
 
 
