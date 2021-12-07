@@ -18,9 +18,16 @@
 
 <h3> 1. Objective </h3>
  “CNN based place recognition web app”
+ <br>
 - 01. Service of place recognition feature & SNS feature.
+ <br>
+
 - 02. Collect data set & Build CNN models which have the best accuracy
+ <br>
+
 - 03. Work on UI design & graphic Design
+ <br>
+
 - 04. Apply CNN models on web app
 
 <br>
