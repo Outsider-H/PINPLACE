@@ -44,18 +44,13 @@
 <h4> c. Description of each page  <h4>
 
 <p>
-PINPLACE Pages
-	└a.coverpage: Since it is the first screen that users face, We designed the logo ourselves because we thought we had to firmly convey the platform brand image.
-	└proposal.pdf
-	└requirements.pdf
-	└design_specification.pdf
 
 	
 a.	Cover page <br>
  Since it is the first screen that users face, We designed the logo ourselves because we thought we had to firmly convey the platform brand image.
-<br>
+<br><br>
 o	Top Layer <br>
-•	“PINPLACE” (Our platform’s name) <br>
+•	“PINPLACE” (Our platform’s name) <br><br>
 o	Bottom Layer <br>
 •	3d graphic assets (Represents our platform’s brand image) <br>
 •	Include in “Onclick Function: that can move next page<br>
