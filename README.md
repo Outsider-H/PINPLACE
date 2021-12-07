@@ -127,12 +127,14 @@ This is the own user page for a user logged in, which shows pictures uploaded by
 
 ------------------------------------------------------------------------------
 
-### class List
+### Class List
 
 Total 10 class
 
 ```
-Dongdaemun_Design_Plaza, Gyeongui_Line_Forest_Park, Naksan_Park, Namsan_Seoul_Tower, The_Hyundai_Seoul_Mall,  Myeongdong_Cathedral, Ikseon_Dong_Hanok_Village, Jamsil_Lotte_Tower, Han_River_Sebitseom,
+Dongdaemun_Design_Plaza, Gyeongui_Line_Forest_Park, Naksan_Park,
+Namsan_Seoul_Tower, The_Hyundai_Seoul_Mall,  Myeongdong_Cathedral,
+Ikseon_Dong_Hanok_Village, Jamsil_Lotte_Tower, Han_River_Sebitseom,
 Haebangchon
 ```
 
