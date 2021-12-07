@@ -38,20 +38,22 @@
 
 
 <h3> 2. Application's Structure </h3>
--------------
+------------------------------------------------------------------------------
 
 <h4> a. User Flow <h4>
  <p> The following is a user flow diagram, which shows the connectivity and hierarchy between our web pages.
  </p>
 <img src="./userflow.png">
 <br>
-	-------------
+
+------------------------------------------------------------------------------
 
 <h4> b. Page Lists (10 pages) <h4>
 <p>≪  Cover page / Start Page / User Guide Page / Signup Page / Login Page <br> <br>
  / Find Location Page / List Up Page / Upload Picture Page / SNS Page / My Page  ≫ </p>
  <br>
-	-------------
+
+------------------------------------------------------------------------------
 
 <h4> c. Description of each page  <h4>
 
