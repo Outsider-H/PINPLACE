@@ -23,6 +23,7 @@
 [![——————————————————————————](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#license)
 
 ## 1. Objective
+
  ```
  “CNN based place recognition web app”
  ```
