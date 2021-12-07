@@ -33,6 +33,7 @@
 
 <h3> 2. Application's Structure </h3>
 <img src="./userflow.png">
+The following is a user flow diagram, which shows the connectivity and hierarchy between our web pages.
 
 
 
