@@ -66,7 +66,6 @@ a.	Cover page :
 
 b.	Start Page :
  This page is expressed in fancy graphics to roughly imply the functionality of our platform<br>
-	<br>
 
 c.	User Guide Page :
  For optimal UX, we made this page with Card UI. Every time user turn the page, the content and design are designed to be different. <br>
@@ -134,7 +133,9 @@ This is the own user page for a user logged in, which shows pictures uploaded by
 Total 10 class
 
 ```
-Dongdaemun_Design_Plaza, Gyeongui_Line_Forest_Park, Naksan_Park, Namsan_Seoul_Tower, The_Hyundai_Seoul_Mall,  Myeongdong_Cathedral, Ikseon_Dong_Hanok_Village, Jamsil_Lotte_Tower, Han_River_Sebitseom,
+Dongdaemun_Design_Plaza, Gyeongui_Line_Forest_Park, Naksan_Park,
+Namsan_Seoul_Tower, The_Hyundai_Seoul_Mall,  Myeongdong_Cathedral,
+Ikseon_Dong_Hanok_Village, Jamsil_Lotte_Tower, Han_River_Sebitseom,
 Haebangchon
 ```
 
