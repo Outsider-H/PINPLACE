@@ -39,7 +39,6 @@
 
 <h3> 2. Application's Structure </h3>
  <br>
-------------------------------------------------------------------------------
 
 <h4> a. User Flow <h4>
  <p> The following is a user flow diagram, which shows the connectivity and hierarchy between our web pages.
