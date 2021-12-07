@@ -11,8 +11,10 @@ def createFolder(directory):
             os.makedirs(directory)
     except OSError:
         print ('Error: Creating directory. ' +  directory)
-keyword='연트럴 파크' 
+ 
 #검색할 키워드
+keyword='연트럴 파크'
+
 createFolder('C:/Users/user/Desktop/images/'+keyword+'_img_download') 
 chromedriver = 'C:/Users/user/Downloads/chromedriver.exe' 
 driver = webdriver.Chrome(chromedriver) 
