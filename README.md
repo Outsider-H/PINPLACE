@@ -43,6 +43,7 @@
  <br>
 <h4> c. Description of each page  <h4>
 <br>
+	<p>
 a.	Cover page <br>
  Since it is the first screen that users face, We designed the logo ourselves because we thought we had to firmly convey the platform brand image.
 <br>
@@ -132,6 +133,7 @@ o	Layout <br>
 •	User’s nickname and profile photo <br>
 <br>
  
+	</p>
 
 
 # Output
