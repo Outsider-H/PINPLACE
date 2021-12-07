@@ -11,7 +11,7 @@
 
 # PINPLACE
 <br>
-## Summary 
+<h3>Summary</h3>
 <img src="./pinplace.png">
 <br>
 <br>
