@@ -60,7 +60,6 @@
 
 - ### Description of each page
 
-	
   - Cover page :
  Since it is the first screen that users face, We designed the logo ourselves because we thought we had to firmly convey the platform brand image.
 <br>
